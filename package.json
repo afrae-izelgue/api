@@ -1,0 +1,43 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon index.js",
+        "seed": "esbuild prisma/seed.ts --outfile=node_modules/tmp-seed.cjs --bundle --format=cjs --external:prisma --external:@prisma/client && node node_modules/tmp-seed.cjs --preview-feature"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@nestjs/common": "^9.3.9",
+        "@nestjs/config": "^2.3.1",
+        "@nestjs/swagger": "^6.2.1",
+        "@prisma/client": "^4.11.0",
+        "express": "^4.18.2",
+        "swagger-ui-express": "^4.6.2",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "@tsconfig/node16": "^1.0.3",
+        "@types/node": "^18.15.1",
+        "esbuild": "^0.17.11",
+        "nodemon": "^2.0.21",
+        "prisma": "^4.11.0",
+        "ts-node": "^10.9.1",
+        "tsx": "^3.12.5",
+        "typescript": "^4.9.5"
+    },
+    "prisma": {
+        "seed": "tsx prisma/seed.ts"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ]
+    }
+}
